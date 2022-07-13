@@ -125,7 +125,9 @@ q:after {
     content: '';
     content: none;
 }
-
+a{
+    text-decoration: none;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -163,5 +165,82 @@ body{
     font-family: Graphik, sans-serif;
 }
 body{
+    display: flex ;
+}
+.sidebar{
+    width: 252px;
+    background: #4C52BC;
     display: flex;
+    flex-direction: column;
+}
+.sidebar .logo{
+    padding: 35px 0 65px 42px;
+
+}
+.sidebar .logo a{
+    display: block;
+}
+.sidebar .logo a img{
+    width: 100px;
+    height: 70px;
+}
+.sidebar .menu ul li a {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 48px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .6);
+}
+.sidebar .menu ul li a:hover{
+    color: #fff;
+}
+.sidebar .menu ul li.active a {
+    color: #fff;
+    background: linear-gradient(to left, transparent, rgba(255, 255, 255, .08));
+    box-shadow: 0 1px 3px 4px rgba(0, 0, 0, .1);
+}
+.sidebar .storage{
+    padding: 0 40px 35px;
+    margin-top: auto;
+}
+.sidebar .storage .title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    align-items: center;
+}
+
+.sidebar .storage .title div i{
+    margin-right: 5px;
+}
+.sidebar .storage .title .percent{
+    font-size: 12px;
+    color: rgba(255, 255, 255, .8);
+    font-weight: normal;
+}
+.sidebar .storage .bar{
+    width: 100%;
+    height: 6px;
+    border-radius: 6px;
+    background: #30358A;
+    margin-top: 12px;
+}
+.sidebar .storage .bar span{
+    width: auto;
+    height: 6px;
+    border-radius: 6px;
+    background: #F8D9AF;
+    display: block;
+}
+
+
+
+
+
+
+.content{
+    flex: 1;
 }
