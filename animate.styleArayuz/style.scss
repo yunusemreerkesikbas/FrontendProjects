@@ -8,6 +8,7 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-overflow-scrolling: touch;
 }
 
 html {
@@ -81,6 +82,8 @@ h3 {
             height: 100vh;
             width: 100%;
             transform: translateX(100%);
+            will-change: transform;
+            transition: 300ms transform;
         }
         .intro-left{
             margin-top: auto;
@@ -119,6 +122,10 @@ h3 {
         background: var(--renk2);
         padding: 35px;
         overflow: auto;
+        &.active{
+            transform: translateX(0);
+            
+        }
         .btn{
             margin-bottom: 30px;
         }
@@ -157,6 +164,26 @@ h3 {
 }
 
 main {
+    .hamburger{
+        @media (min-width:1000px) {
+            display: none;
+        }
+        position: sticky;
+        top: 20px;
+        left: 100%;
+        background: var(--renk4);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--renk3);
+        will-change: transform;
+        transition: 300ms transform;
+        &.active{
+            transform: translateX(-240px);
+        }
+    }
     .container {
         @media(min-width:1000px) {
             display: grid;
@@ -279,7 +306,7 @@ main {
             grid-column: 3 /3;
 
         }
-
+        overflow: auto;
         background: var(--renk2);
         padding: 25px 40px;
 
@@ -287,7 +314,7 @@ main {
             position: fixed;
             top: 0;
             right: 0;
-            width: 100%;
+            width: 240px;
             height: 100vh;
             transform: translateX(100%);
             will-change: transform;
@@ -322,6 +349,9 @@ main {
                     }
                 }
             }
+        }
+        &.active{
+            transform: translateX(0);
         }
 
     }

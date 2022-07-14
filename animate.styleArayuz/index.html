@@ -14,10 +14,10 @@
         <div class="intro-left">
             <h1>Animate.css</h1>
             <h2>Just-add-water CSS animations</h2>
-            <a href="#" class="btn">See animations</a>
+            <a href="#" class="btn" id="intro-sidebar-open-btn">See animations</a>
         </div>
-        <div class="intro-sidebar">
-            <a href="#" class="btn">Close list</a>
+        <div class="intro-sidebar" id="intro-sidebar">
+            <a href="#" class="btn" id="intro-sidebar-close-btn">Close list</a>
             <section>
                 <h3>Attention seekers</h3>
                 <ul>
@@ -236,6 +236,13 @@
             </div>
         </header>
         <article id="documentation">
+            <a href="#" id="hamburger-menu-btn" class="hamburger">
+                <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="1.5" x2="23" y2="1.5" stroke="#351C75" stroke-width="3"></line>
+                    <line y1="7.5" x2="23" y2="7.5" stroke="#351C75" stroke-width="3"></line>
+                    <line y1="13.5" x2="23" y2="13.5" stroke="#351C75" stroke-width="3"></line>
+                </svg>
+            </a>
             <div class="container">
                 <div class="content">
                     <section>
@@ -449,7 +456,7 @@
                     </section>
 
                 </div>
-                <div class="sidebar">
+                <div class="sidebar" id="sidebar">
                     <div class="version">v4.1.0</div>
                     <nav>
                         <ul>
@@ -489,6 +496,25 @@
             <p>Animate.css is a Hippocratic-2.1 licensed library. You can use it freely, respecting the terms included in the license file.</p>
         </footer>
     </main>
+    <script>
+        let introSidebar = document.getElementById('intro-sidebar')
+        document.getElementById('intro-sidebar-open-btn').addEventListener('click', (e) => {
+            introSidebar.classList.add('active');
+            e.preventDefault();
+        });
+        document.getElementById('intro-sidebar-close-btn').addEventListener('click', (e) => {
+            introSidebar.classList.remove('active');
+            e.preventDefault();
+        });
+        let sidebar = document.getElementById('sidebar'),
+            menuBtn = document.getElementById('hamburger-menu-btn');
+        menuBtn.addEventListener('click', (e) => {
+            menuBtn.classList.toggle('active');
+            sidebar.classList.toggle('active');
+            e.preventDefault();
+        })
+    </script>
+
 </body>
 
 </html>
